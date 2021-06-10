@@ -1,0 +1,72 @@
+#applications:
+ #        name : app
+ #        memory: 512MB
+ #        instance: 1
+
+# ---- Server properties ----
+server.servlet.context-path: /ascapp
+server.port: 8080
+server.error.include-stacktrace: never
+
+# ---- Application properties ----
+spring.application.name: Asc-app
+spring.profiles.active: dev
+spring.config.use-legacy-processing: true
+spring.main.allow-bean-definition-overriding: true
+spring.jpa.generate-ddl: true
+spring.jpa.hibernate.ddl-auto: create
+spring.jpa.show-sql: true
+spring.devtools.livereload.enabled: true
+
+# ---- Log file properties ----
+logging.file: D:/ascapp_log/asc_app_log_file.log
+logging.pattern.file: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+#logging.level.org.springframework.web: DEBUG
+logging.level.org.hibernate.SQL: DEBUG
+#logging.level.org.hibernate.type: TRACE
+
+# ---- Security properties ----
+logging.level.org.springframework.security: DEBUG
+server.servlet.session.timeout: 1m
+#spring.security.user.name: ascapp
+#spring.security.user.password: ascapp123
+#spring.security.user.roles: 
+security:
+  oauth2:
+    client:
+      client-id: first-client
+      client-secret: noonewilleverguess
+
+# ---- MySQL local database properties ----
+#spring.second-datasource.jdbc-url: jdbc:mysql://127.0.0.1:3306/testapp?useSSL=false&allowPublicKeyRetrieval=true
+#spring.second-datasource.driverClassName: com.mysql.cj.jdbc.Driver
+#spring.second-datasource.username: root
+#spring.second-datasource.password: root
+#spring.datasource.generate-dll: false
+
+# ---- Spring properties ----
+spring:
+   datasource: 
+      driverClassName: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/ascapp?useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: root
+     # testOnBorrow: true
+      #testWhileIdle: true
+     # timeBetweenEvictionRunsMillis: 60000
+   #   minEvictableIdleTimeMillis: 30000
+    #  validationQuery: SELECT 1
+     # max-active: 15
+     # max-idle: 10
+     # max-wait: 8000
+   #http:
+    #  log-request-details: true
+   #mvc:
+    #  log-request-details: true
+      
+      
+#eureka.client.register-with-eureka: false
+#eureka.client.fetch-registry: false
+
+#logging.level.com.netflix.eureka: OFF
+#logging.level.com.netflix.discovery: OFF
